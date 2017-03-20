@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/jsonic-1.2.0.jar"/>
+	<classpathentry kind="lib" path="libs/jsoup-1.9.2.jar"/>
+	<classpathentry kind="lib" path="libs/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.13-bin.jar"/>
+	<classpathentry kind="lib" path="libs/NCommon.jar"/>
+	<classpathentry kind="lib" path="libs/org.springframework.beans-3.1.0.M2.jar"/>
+	<classpathentry kind="lib" path="libs/org.springframework.core-3.1.0.M2.jar"/>
+	<classpathentry kind="lib" path="libs/org.springframework.jdbc-3.1.0.M2.jar"/>
+	<classpathentry kind="lib" path="libs/org.springframework.transaction-3.1.0.M2.jar"/>
+	<classpathentry kind="lib" path="libs/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
