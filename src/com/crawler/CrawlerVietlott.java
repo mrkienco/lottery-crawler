@@ -54,7 +54,8 @@ public class CrawlerVietlott extends Thread {
 			// GET VALUE
 			Elements jackpot_ = doc.select("table.table").first().select("tbody").first().select("td");
 			for (Element jackpot : jackpot_) {
-				jackpot_list.add(jackpot.text());
+				if (Main.isNumeric(jackpot.text()))
+					jackpot_list.add(jackpot.text());
 			}
 
 			// ========== TO DATABASE ===========//

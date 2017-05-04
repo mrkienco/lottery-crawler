@@ -31,7 +31,7 @@ public class LotoDao extends SimpleJdbcDaoSupport {
 	@SuppressWarnings("unchecked")
 	public List<LotoBean> getLoto(int cat_id, String gen_date, String value) {
 		String sql = "SELECT * FROM loto WHERE cat_id = " + cat_id + " AND gen_date = '" + gen_date + "' AND value = '"
-				+ value + "'";
+				+ value + "' AND DATE(gen_date) = DATE('" + gen_date + "')";
 		return getSimpleJdbcTemplate().query(sql, new LottoMapper());
 	}
 

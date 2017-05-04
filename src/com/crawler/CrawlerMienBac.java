@@ -108,7 +108,7 @@ public class CrawlerMienBac extends Thread {
 						break;
 					}
 					}
-					if (Main.hasNumber(value))
+					if (Main.isNumeric(value))
 						ketqua.add(new Reward(value, rank));
 				}
 			}
@@ -119,7 +119,7 @@ public class CrawlerMienBac extends Thread {
 				for (Element lotoIndex : lotoTrucTiep) {
 					// ===============================// Loto
 					String loto_str = lotoIndex.text();
-					if (Main.hasNumber(loto_str))
+					if (Main.isNumeric(loto_str))
 						loto.add(loto_str);
 				}
 			} catch (Exception e) {
@@ -135,7 +135,8 @@ public class CrawlerMienBac extends Thread {
 					if (dt.attr("id").equals("outer_result_123")) {
 						Elements ketqua123_ = dt.select("tbody").first().select("td");
 						for (Element ketqua123 : ketqua123_) {
-							dt123.add(ketqua123.text());
+							if (Main.isNumeric(ketqua123.text()))
+								dt123.add(ketqua123.text());
 						}
 					}
 				}
@@ -152,7 +153,8 @@ public class CrawlerMienBac extends Thread {
 					if (dt.attr("id").equals("outer_result_636")) {
 						Elements ketqua636_ = dt.select("tbody").first().select("td");
 						for (Element k : ketqua636_) {
-							dt6x36.add(k.text());
+							if (Main.isNumeric(k.text()))
+								dt6x36.add(k.text());
 						}
 					}
 				}
@@ -169,7 +171,8 @@ public class CrawlerMienBac extends Thread {
 					if (dt.attr("id").equals("outer_result_tt4")) {
 						Elements tt_ = dt.select("tbody").first().select("td");
 						for (Element tt : tt_)
-							thantai.add(tt.text());
+							if (Main.isNumeric(tt.text()))
+								thantai.add(tt.text());
 					}
 				}
 			} catch (Exception e) {

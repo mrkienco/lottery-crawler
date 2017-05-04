@@ -67,23 +67,10 @@ public class Main {
 		new CrawlerVietlott(dateVietlott).start();
 	}
 
-	public static boolean hasNumber(String str) {
+	public synchronized static boolean isNumeric(String str) {
 		try {
-			switch (str.charAt(0)) {
-			case '0':
-			case '1':
-			case '2':
-			case '3':
-			case '4':
-			case '5':
-			case '6':
-			case '7':
-			case '8':
-			case '9':
-				return true;
-			default:
-				return false;
-			}
+			Integer.parseInt(str);
+			return true;
 		} catch (Exception e) {
 			return false;
 		}

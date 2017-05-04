@@ -108,7 +108,8 @@ public class CrawlerMienTrung extends Thread {
 						break;
 					default:
 						value = c.text();
-						tinh_array.get(index % soTinhQuay).getRewards().add(new Reward(value, rank));
+						if (Main.isNumeric(value))
+							tinh_array.get(index % soTinhQuay).getRewards().add(new Reward(value, rank));
 						index++;
 						break;
 					}
@@ -127,7 +128,8 @@ public class CrawlerMienTrung extends Thread {
 				for (Element lttt : lttt_) {
 					Elements loto_ = lttt.select("table.table").first().select("tbody").first().select("td");
 					for (Element loto : loto_) {
-						tinh_array.get(index).getLoto().add(loto.text());
+						if (Main.isNumeric(loto.text()))
+							tinh_array.get(index).getLoto().add(loto.text());
 					}
 					index++;
 				}

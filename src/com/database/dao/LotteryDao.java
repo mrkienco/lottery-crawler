@@ -34,7 +34,7 @@ public class LotteryDao extends SimpleJdbcDaoSupport {
 	@SuppressWarnings("unchecked")
 	public List<LotteryBean> getLottery(int cat_id, int rank, String value, String gen_date) {
 		String sql = "SELECT * FROM lottery WHERE cat_id = " + cat_id + " AND rank = " + rank + " AND value = '" + value
-				+ "' AND gen_date = '" + gen_date + "'";
+				+ "' AND DATE(gen_date) = DATE('" + gen_date + "')";
 		return getSimpleJdbcTemplate().query(sql, new LotteryMapper());
 	}
 
